@@ -1,0 +1,27 @@
+#toggleDisplay{
+    position: absolute;
+    left: -50%;
+    top: 80px;
+}
+
+@media only screen and (max-width: 768px) {
+  #toggleNone {
+      display: none;
+  }
+
+  #toggleDisplay {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      position: absolute;
+      left: 0%;
+      top: 80px;
+      width: 100%;
+      background-color: black;
+  }
+
+  #toggleDisplay a{
+      margin-top: 20px;
+  }
+}

@@ -1,0 +1,7 @@
+.sideBanner{
+    height: 80vh;
+    background-image: url(../../../../../images/Home/sideBanner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

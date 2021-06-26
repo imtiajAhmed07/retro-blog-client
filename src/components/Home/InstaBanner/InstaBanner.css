@@ -1,0 +1,14 @@
+.instaBanner{
+    background-image: url(../../../images/Home/instaCover.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.instaBlack{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.instaWhite{
+    background-color: rgba(255, 255, 255, 0.5);
+}
