@@ -8,22 +8,22 @@ import { faImage } from '@fortawesome/free-regular-svg-icons';
 export const SidebarData = [
     {
         title: "Home",
-        path: '/home',
+        path: '/admin',
         icon: <FontAwesomeIcon icon={faHome} />
     },
     {
         title: "Banner",
-        path: '/banner',
+        path: '/admin/banner',
         icon: <FontAwesomeIcon icon={faImage} />
     },
     {
-        title: 'Blog',
-        path: '/blog',
+        title: 'Post A Blog',
+        path: '/admin/post-blog',
         icon: <FontAwesomeIcon icon={faPenSquare} />
     },
     {
         title: 'Blog List',
-        path: '/blog-list',
+        path: '/admin/blog-list',
         icon: <FontAwesomeIcon icon={faList} />
     }
 ]

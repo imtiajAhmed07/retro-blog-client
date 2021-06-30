@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from '../SidebarData/SidebarData';
 
 const Sidebar = () => {
+    
+    
+
     return (
-        <section>
-            <div className="w-72 h-screen bg-gray-400">
+        <section className="hidden md:block fixed">
+            <div className="w-64 h-screen bg-gray-100">
                 {
                     SidebarData.map((item) => (
-                        <Link className="flex pl-5 text-lg font-bold items-center hover:bg-white w-full h-16" to={item.path}>
+                        <Link className="flex pl-5 text-base font-medium items-center hover:bg-gray-200 w-full h-14" to={item.path}>
                             <p>{item.icon}</p>
                             <p className="ml-3">{item.title}</p>
                         </Link>
