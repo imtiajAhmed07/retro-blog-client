@@ -28,7 +28,7 @@ const Blog = () =>{
         formData.append('blogDescription', info.blogDescription)
         formData.append('category', info.category)
 
-        fetch('http://localhost:5055/post-blog', {
+        fetch('https://fast-cove-64403.herokuapp.com/post-blog', {
             method: 'POST',
             body: formData
         })

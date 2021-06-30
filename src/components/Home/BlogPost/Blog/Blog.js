@@ -57,7 +57,7 @@ const Blog = () => {
     console.log(blogPost);
 
     useState(() =>{
-        fetch("http://localhost:5055/blogs")
+        fetch("https://fast-cove-64403.herokuapp.com/blogs")
             .then(res => res.json())
             .then(data => setBlogPost(data))
     }, [])
