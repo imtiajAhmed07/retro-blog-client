@@ -4,7 +4,9 @@ import './Blog.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloud, faTimes, } from '@fortawesome/free-solid-svg-icons';
 
-const Blog = () =>{
+const Blog = () =>
+{
+   
 
     const [info, setInfo] = useState({})
     const [file, setFile] = useState(null);
@@ -18,6 +20,7 @@ const Blog = () =>{
         console.log(e.target.value);
     }
 
+
     // post all data together......
     const handleSubmit = e =>{
  
@@ -28,6 +31,11 @@ const Blog = () =>{
         formData.append('blogDescription', info.blogDescription)
         formData.append('category', info.category)
 
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"];
+        const newDate = new Date()
+        const date = monthNames[(newDate.getMonth())] + ' ' + newDate.getDate() + ' ' + newDate.getFullYear()
+        formData.append("time", date)
 
         fetch("https://fast-cove-64403.herokuapp.com/post-blog", {
             method: 'POST',
