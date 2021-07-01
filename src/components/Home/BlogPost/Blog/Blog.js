@@ -69,7 +69,7 @@ const Blog = () => {
                         blogPost.map((blog) => (
                             <div>
                                 <div className="h-64 sm:h-72 2xl:h-96 overflow-hidden flex justify-center items-center rounded-lg md:rounded-none mt-10">
-                                    <img className="" src={`data: images/png;base64, ${blog.image.img}`} alt="" />
+                                    <img className="" src={`data:images/png;base64, ${blog.image.img}`} alt="" />
                                 </div>
                                 <div className="mt-5">
                                     <div className="flex justify-between">

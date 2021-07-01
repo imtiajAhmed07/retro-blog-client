@@ -4,38 +4,47 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 
-const blogList = [
-    {
-        img: aboutProfile,
-        title: "9 Most Awesome Blue Lake With Snow Mountain",
-        edit: <FontAwesomeIcon icon={faEdit} />,
-        category: "Travel",
-        delete: <FontAwesomeIcon icon={faTrashAlt} />,
-    },
-    {
-        img: aboutProfile,
-        title: "9 Most Awesome Blue Lake With Snow Mountain",
-        edit: <FontAwesomeIcon icon={faEdit} />,
-        category: "Travel",
-        delete: <FontAwesomeIcon icon={faTrashAlt} />,
-    },
-    {
-        img: aboutProfile,
-        title: "9 Most Awesome Blue Lake With Snow Mountain",
-        edit: <FontAwesomeIcon icon={faEdit} />,
-        category: "Travel",
-        delete: <FontAwesomeIcon icon={faTrashAlt} />,
-    },
-    {
-        img: aboutProfile,
-        title: "9 Most Awesome Blue Lake With Snow Mountain",
-        edit: <FontAwesomeIcon icon={faEdit} />,
-        category: "Travel",
-        delete: <FontAwesomeIcon icon={faTrashAlt} />,
-    },
-]
+// const blogList = [
+//     {
+//         img: aboutProfile,
+//         title: "9 Most Awesome Blue Lake With Snow Mountain",
+//         edit: <FontAwesomeIcon icon={faEdit} />,
+//         category: "Travel",
+//         delete: <FontAwesomeIcon icon={faTrashAlt} />,
+//     },
+//     {
+//         img: aboutProfile,
+//         title: "9 Most Awesome Blue Lake With Snow Mountain",
+//         edit: <FontAwesomeIcon icon={faEdit} />,
+//         category: "Travel",
+//         delete: <FontAwesomeIcon icon={faTrashAlt} />,
+//     },
+//     {
+//         img: aboutProfile,
+//         title: "9 Most Awesome Blue Lake With Snow Mountain",
+//         edit: <FontAwesomeIcon icon={faEdit} />,
+//         category: "Travel",
+//         delete: <FontAwesomeIcon icon={faTrashAlt} />,
+//     },
+//     {
+//         img: aboutProfile,
+//         title: "9 Most Awesome Blue Lake With Snow Mountain",
+//         edit: <FontAwesomeIcon icon={faEdit} />,
+//         category: "Travel",
+//         delete: <FontAwesomeIcon icon={faTrashAlt} />,
+//     },
+// ]
 
 const BlogList = () => {
+    
+    const [blogList, setBlogList] = useState([])
+
+    useState(() =>
+    {
+        fetch("https://fast-cove-64403.herokuapp.com/blogs")
+            .then(res => res.json())
+            .then(data => setBlogList(data))
+    }, [])
 
     return (
         <div className="md:ml-64 bg-gray-200">
@@ -49,12 +58,12 @@ const BlogList = () => {
                 {
                     blogList.map((item) => (
                         <div className="px-2 py-2 mt-4 flex-col flex md:flex-row justify-around items-center rounded-lg bg-gray-100">
-                            <img className="mt-2 md:mt-2 h-20 py-2" src={item.img} alt="" />
-                            <p className="mt-2 md:mt-2 text-center md:text-left">{item.title}</p>
+                            <img className="mt-2 md:mt-2 h-20 py-2" src={`data:images/png;base64, ${ item.image.img }`} alt="" />
+                            <p className="mt-2 md:mt-2 text-center md:text-left">{item.blogTitle}</p>
                             <p className="mt-2 md:mt-2">{item.category}</p>
                             <div className="mt-2 mb-2 md:mt-2 md:mb-0 flex">
-                                <a href="/admin/post-blog" className="cursor-pointer text-blue-300">{item.edit}</a>
-                                <p className="cursor-pointer ml-5 text-red-600">{item.delete}</p>
+                                <a href="/admin/post-blog" className="cursor-pointer text-blue-300"><FontAwesomeIcon icon={faEdit} /></a>
+                                <p className="cursor-pointer ml-5 text-red-600"><FontAwesomeIcon icon={faTrashAlt} /></p>
                             </div>
                         </div>
                     ))

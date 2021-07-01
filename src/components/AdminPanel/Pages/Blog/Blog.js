@@ -15,11 +15,12 @@ const Blog = () =>{
         const newInfo = { ...info };
         newInfo[e.target.name] = e.target.value
         setInfo(newInfo)
+        console.log(e.target.value);
     }
 
     // post all data together......
     const handleSubmit = e =>{
-
+ 
         const formData = new FormData()
         formData.append('file', file)
         formData.append('blogTitle', info.blogTitle)
@@ -28,17 +29,15 @@ const Blog = () =>{
         formData.append('category', info.category)
 
 
-        fetch('https://fast-cove-64403.herokuapp.com/post-blog', {
+        fetch("https://fast-cove-64403.herokuapp.com/post-blog", {
             method: 'POST',
             body: formData,
         })
             .then(response => response.json())
-            .then(data =>
-            {
+            .then(data =>{
                 console.log(data)
             })
-            .catch(error =>
-            {
+            .catch(error =>{
                 console.error(error)
             })
 
