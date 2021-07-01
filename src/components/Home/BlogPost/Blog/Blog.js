@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import BlogSidebar from '../BlogSidebar/BlogSidebar/BlogSidebar'
-import i1 from '../../../../images/Home/i1.jpg'
-import i3 from '../../../../images/Home/i3.jpg'
-import i4 from '../../../../images/Home/i4.jpg'
-import i5 from '../../../../images/Home/i5.jpg'
-import i2 from '../../../../images/Home/i2.jpg'
+// import i1 from '../../../../images/Home/i1.jpg'
+// import i3 from '../../../../images/Home/i3.jpg'
+// import i4 from '../../../../images/Home/i4.jpg'
+// import i5 from '../../../../images/Home/i5.jpg'
+// import i2 from '../../../../images/Home/i2.jpg'
 
 // const blogPost = [
 //     {
@@ -54,7 +54,6 @@ import i2 from '../../../../images/Home/i2.jpg'
 const Blog = () => {
     
     const [blogPost, setBlogPost] = useState([])
-    console.log(blogPost);
 
     useState(() =>{
         fetch("https://fast-cove-64403.herokuapp.com/blogs")

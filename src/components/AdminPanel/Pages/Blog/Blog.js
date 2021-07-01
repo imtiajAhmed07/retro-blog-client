@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './Blog.css'
 // import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FaCloudUploadAlt } from 'react-icons/fa';
 import { faCloud, faTimes, } from '@fortawesome/free-solid-svg-icons';
 
 const Blog = () =>{
@@ -28,9 +27,10 @@ const Blog = () =>{
         formData.append('blogDescription', info.blogDescription)
         formData.append('category', info.category)
 
+
         fetch('https://fast-cove-64403.herokuapp.com/post-blog', {
             method: 'POST',
-            body: formData
+            body: formData,
         })
             .then(response => response.json())
             .then(data =>
